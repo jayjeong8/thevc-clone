@@ -4,13 +4,21 @@ import {IRankArticle, IRankingData} from "../../interface";
 import {useQuery} from "react-query";
 
 const Article = styled.article`
-
+  margin-left: 20px;
+  padding: ${props => props.theme.gap.L};
+  width: 300px;
+  min-width: 300px;
+  height: 400px;
+  background-color: ${props => props.theme.blue.main};
+  border-radius: 8px;
 `
 const Title = styled.div`
 
 `
 const TimeFilter = styled.div``
-const Button = styled.button``
+const Button = styled.button`
+  width: 88px;
+  height: 24px;`
 const InvestmentData = styled.section``
 const InvestmentInfo = styled.div``
 
