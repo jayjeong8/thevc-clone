@@ -1,12 +1,11 @@
 import React from "react";
-import styled from 'styled-components';
+import {LazyLoadingSection, ResearchInfo, ResearchTitle, ResearchWrapper} from "../style/ResearchStyle";
 
-const ResearchInfo = styled.div``
-const LazyLoadingSection = styled.section``
 
 export default function Research() {
     return (
-        <>
+        <ResearchWrapper>
+            <ResearchTitle>투자/M&A 탐색</ResearchTitle>
             <section>
                 <ResearchInfo>
                     <div>총 투자 금액</div>
@@ -20,6 +19,6 @@ export default function Research() {
             <LazyLoadingSection>
 
             </LazyLoadingSection>
-        </>
+        </ResearchWrapper>
     )
 }
