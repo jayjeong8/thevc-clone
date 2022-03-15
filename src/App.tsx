@@ -1,13 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
+import RankArticle from "./components/RankArticle";
+import Research from "./components/Research";
 
+const Logo = styled.div``
+const Nav = styled.div``
+const LogoSquare = styled.div``
+const Search = styled.input``
+const LoginBtn = styled.button``
+const Ranking = styled.section``
 
 function App() {
     return (
         <>
             <header>
                 <section>
-                    <Logo></Logo>
+                    <Logo><img/></Logo>
                     <Nav>
                         <ul>
                             <li>탐색</li>
@@ -39,48 +47,15 @@ function App() {
                 </section>
             </header>
             <Ranking>
-                <Article>
-                    <Title>
-                        <span>💰</span>
-                        <h1>투자 유치 랭킹</h1>
-                        <h2>투자금액 순</h2>
-                    </Title>
-                    <TimeFilter>
-                        <Button>주간</Button>
-                        <Button>월간</Button>
-                        <Button>연간</Button>
-                    </TimeFilter>
-                    <InvestmentData>
-                        <li>
-                            <span>1</span>
-                            <div><img/></div>
-                            <InvestmentInfo>
-                                <div>쏘카</div>
-                                <div>쏘카</div>
-                            </InvestmentInfo>
-                            <InvestmentInfo>
-                                <div>1832억</div>
-                                <div>Series G</div>
-                            </InvestmentInfo>
-                        </li>
-                    </InvestmentData>
-                </Article>
+               <RankArticle icon={"💰"} title={"투자 유치 랭킹"} subtitle={"투자금액 순"}/>
+               <RankArticle icon={"💰"} title={"투자 집행 랭킹"} subtitle={"투자건수 순"}/>
+               <RankArticle icon={"🔥"} title={"스타트업 랭킹"} subtitle={"조회수 순"}/>
+               <RankArticle icon={"🔥"} title={"액셀러레이터 랭킹"} subtitle={"조회수 순"}/>
+               <RankArticle icon={"🔥"} title={"벤처캐피탈 랭킹"} subtitle={"조회수 순"}/>
+               <RankArticle icon={"🔥"} title={"대기업/중견기업 랭킹"} subtitle={"조회수 순"}/>
+               <RankArticle icon={"🔥"} title={"금융회사 랭킹"} subtitle={"조회수 순"}/>
             </Ranking>
-            <Research>
-                <section>
-                    <ResearchInfo>
-                        <div>총 투자 금액</div>
-                        <div>120조 3314억+</div>
-                    </ResearchInfo>
-                    <ResearchInfo>
-                        <div>총 투자 건수</div>
-                        <div>11,923건</div>
-                    </ResearchInfo>
-                </section>
-                <LazyLoadingSection>
-
-                </LazyLoadingSection>
-            </Research>
+            <Research/>
         </>
     );
 }
