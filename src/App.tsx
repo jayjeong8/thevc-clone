@@ -1,21 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+import {Logo, Nav, LogoSquare, Search, LoginBtn, Ranking, LogoSection, SearchSection} from "./style/AppStyle";
 import RankArticle from "./components/RankArticle";
 import Research from "./components/Research";
-
-const Logo = styled.div``
-const Nav = styled.div``
-const LogoSquare = styled.div``
-const Search = styled.input``
-const LoginBtn = styled.button``
-const Ranking = styled.section``
 
 function App() {
     return (
         <>
             <header>
-                <section>
-                    <Logo><img/></Logo>
+                <LogoSection>
+                    <Logo>
+                        <img src="https://ui-resources.thevc.kr/cis/thevc_logo_rectangle_transparent_64.png" alt="thevc"/>
+                    </Logo>
                     <Nav>
                         <ul>
                             <li>탐색</li>
@@ -23,16 +18,18 @@ function App() {
                             <li>유료 플랜</li>
                         </ul>
                     </Nav>
-                </section>
-                <section>
+                </LogoSection>
+                <SearchSection>
                     <div>
                         <div>
-                            <LogoSquare></LogoSquare>
+                            <LogoSquare>
+                                <img src="https://ui-resources.thevc.kr/cis/thevc_logo_square.png" alt="thevc" />
+                            </LogoSquare>
                             <span>데이터베이스</span>
                         </div>
                         <div>
-                            <Search></Search>
-                            <LoginBtn></LoginBtn>
+                            <Search placeholder={"회사, 제품, 서비스 검색"}></Search>
+                            <LoginBtn>로그인/가입</LoginBtn>
                         </div>
                     </div>
                     <Nav>
@@ -44,7 +41,7 @@ function App() {
                             <li>뉴스</li>
                         </ul>
                     </Nav>
-                </section>
+                </SearchSection>
             </header>
             <Ranking>
                <RankArticle icon={"💰"} title={"투자 유치 랭킹"} subtitle={"투자금액 순"}/>
