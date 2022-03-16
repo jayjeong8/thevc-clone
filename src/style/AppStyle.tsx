@@ -32,7 +32,6 @@ export const Nav = styled.div`
 
     li {
       padding: ${props => props.theme.gap.S} 0;
-      min-width: 64px;
       cursor: pointer;
     }
   }
@@ -66,7 +65,7 @@ export const SearchSection = styled.section`
     font-size: ${props => props.theme.type.M};
     color: ${props => props.theme.gray.gray};
     margin-right: 30px;
-    
+
     &:first-child {
       color: ${props => props.theme.white};
       border-bottom: 2px solid ${props => props.theme.white};
