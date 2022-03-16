@@ -12,6 +12,11 @@ export const LogoSection = styled.section`
   align-items: center;
   padding: ${props => props.theme.gap.S} ${props => props.theme.gap.L};
   background-color: ${props => props.theme.blue.dark};
+
+  li {
+    margin-right: ${props => props.theme.gap.L};
+    font-size: ${props => props.theme.type.S};
+  }
 `
 export const Logo = styled.div`
   margin-right: ${props => props.theme.gap.L};
@@ -27,8 +32,7 @@ export const Nav = styled.div`
 
     li {
       padding: ${props => props.theme.gap.S} 0;
-      margin-right: ${props => props.theme.gap.L};
-      font-size: ${props => props.theme.type.S};
+      min-width: 64px;
       cursor: pointer;
     }
   }
@@ -51,14 +55,22 @@ export const SearchSection = styled.section`
       margin-bottom: ${props => props.theme.gap.M};
 
       span {
-        font-size: ${props => props.theme.type.S};
+        font-size: ${props => props.theme.type.M};
+        font-weight: bold;
+        min-width: 80px;
       }
     }
   }
 
   li {
+    font-size: ${props => props.theme.type.M};
+    color: ${props => props.theme.gray.gray};
+    margin-right: 30px;
+    
     &:first-child {
+      color: ${props => props.theme.white};
       border-bottom: 2px solid ${props => props.theme.white};
+      font-weight: bold;
     }
   }
 `
@@ -73,8 +85,7 @@ export const Search = styled.input`
   margin-right: ${props => props.theme.gap.M};
   width: 200px;
   height: 40px;
-  padding-top: ${props => props.theme.gap.S};
-  padding-left: ${props => props.theme.gap.M};
+  padding-left: 12px;
   font-size: ${props => props.theme.type.M};
   background-color: ${props => props.theme.black};
   color: ${props => props.theme.white};

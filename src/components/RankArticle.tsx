@@ -1,7 +1,7 @@
 import React from "react";
 import {IRankArticle, IRankingData} from "../../interface";
 import {useQuery} from "react-query";
-import {Article, Button, InvestmentData, InvestmentInfo, Loading, TimeFilter, Title} from "../style/RankArticleStyle";
+import {Article, ArticleOpenBtn, Button, InvestmentData, InvestmentInfo, Loading, TimeFilter, Title} from "../style/RankArticleStyle";
 
 export default function RankArticle({icon, title, subtitle}: IRankArticle) {
     const getRankingData = () => {
@@ -11,7 +11,9 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
     const {data, isLoading} = useQuery<IRankingData[]>(
         "rankingData", getRankingData
     );
-console.log(data)
+    const onOpenBtnClink = () => {
+
+    }
     return (
         <>
             {isLoading ?
@@ -44,6 +46,7 @@ console.log(data)
                             </li>
                         ))}
                     </InvestmentData>
+                    <ArticleOpenBtn onClick={onOpenBtnClink}>▼펼치기</ArticleOpenBtn>
                 </Article>}
         </>
     )
