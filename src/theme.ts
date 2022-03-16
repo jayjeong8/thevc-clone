@@ -6,6 +6,7 @@ export const theme: DefaultTheme = {
             deep: "#101318",
             dark: "#181d24",
             main: "#262e3a",
+            light: "#3e4b5f"
         },
         gray: {
             dark: "#414137",
@@ -14,7 +15,7 @@ export const theme: DefaultTheme = {
         },
         white: "#ffffff",
         type: {
-            L: "1.4rem",
+            L: "1.2rem",
             M: "1rem",
             S: "0.75rem"
         },
