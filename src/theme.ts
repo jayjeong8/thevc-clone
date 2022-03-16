@@ -3,7 +3,7 @@ import {DefaultTheme} from "styled-components";
 export const theme: DefaultTheme = {
         black: "#000000",
         blue: {
-            deep: "#101318",
+            deep: "#0c0c0e",
             dark: "#181d24",
             main: "#262e3a",
             light: "#3e4b5f"
@@ -16,7 +16,7 @@ export const theme: DefaultTheme = {
         white: "#ffffff",
         type: {
             L: "1.2rem",
-            M: "1rem",
+            M: "0.85rem",
             S: "0.75rem"
         },
         gap: {
