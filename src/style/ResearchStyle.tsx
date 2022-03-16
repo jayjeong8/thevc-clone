@@ -10,7 +10,8 @@ export const ResearchWrapper = styled.div`
 `
 export const ResearchTitle = styled.h1`
   padding: ${props => props.theme.gap.L} 0;
-  font-size: ${props => props.theme.type.M};
+  font-size: ${props => props.theme.type.L};
+  font-weight: bold;
 `
 export const ResearchInfo = styled.div`
   display: flex;
