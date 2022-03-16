@@ -1,4 +1,4 @@
-export interface IRankingData{
+export interface IRankingData {
     index: string;
     imgUrl: string;
     rankTitle: string;
@@ -7,8 +7,12 @@ export interface IRankingData{
     series: string;
 }
 
-export interface IRankArticle{
+export interface IRankArticle {
     icon: string;
     title: string;
     subtitle: string;
+}
+
+export interface IImageData {
+    image: string;
 }
