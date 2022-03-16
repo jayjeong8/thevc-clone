@@ -47,6 +47,7 @@ export const Button = styled.button`
   color: ${props => props.theme.white};
   filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.8));
   border: none;
+  cursor: pointer;
 
   &:first-child {
     border-top-left-radius: 4px;
@@ -61,10 +62,20 @@ export const Button = styled.button`
   }
 `
 export const InvestmentData = styled.ul`
+  height: 250px;
+  overflow: hidden;
   li {
-    display: flex;
+    display: grid;
+    grid-template-columns: 10% 15% 55% 20%;
+    grid-template-rows: repeat(auto-fill, 50px);
     align-items: center;
-  width: 100%;
+    width: 100%;
+
+    > div:nth-child(2) {
+      display: flex;
+      align-items: center;
+    }
+
     img {
       width: 40px;
       height: 40px;
@@ -75,18 +86,31 @@ export const InvestmentData = styled.ul`
 
 `
 export const InvestmentInfo = styled.div`
-  &:first-child{
-    min-width: 150px;
+  &:nth-child(3) {
+    padding-left: ${props => props.theme.gap.S};
   }
-  &:last-child {
+
+  &:nth-child(4) {
     justify-self: end;
     text-align: end;
+    div:first-child{
+      font-weight: bold;
+    }
   }
-  div:first-child{
+
+  div:first-child {
     font-size: ${props => props.theme.type.M};
   }
+
   div:last-child {
     font-size: ${props => props.theme.type.S};
     color: ${props => props.theme.gray.gray};
   }
+`
+export const ArticleOpenBtn = styled.div`
+  display: flex;
+  justify-content: center;
+  padding: ${props => props.theme.gap.L} 0;
+  font-size: ${props => props.theme.type.S};
+  cursor: pointer;
 `
