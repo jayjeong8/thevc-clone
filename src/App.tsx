@@ -1,12 +1,12 @@
 import React from 'react';
-import {Logo, Nav, LogoSquare, Search, LoginBtn, Ranking, LogoSection, SearchSection} from "./style/AppStyle";
+import {Logo, Nav, LogoSquare, Search, LoginBtn, Ranking, LogoSection, SearchSection, Header} from "./style/AppStyle";
 import RankArticle from "./components/RankArticle";
 import Research from "./components/Research";
 
 function App() {
     return (
         <>
-            <header>
+            <Header>
                 <LogoSection>
                     <Logo>
                         <img src="https://ui-resources.thevc.kr/cis/thevc_logo_rectangle_transparent_64.png" alt="thevc"/>
@@ -42,7 +42,7 @@ function App() {
                         </ul>
                     </Nav>
                 </SearchSection>
-            </header>
+            </Header>
             <Ranking>
                <RankArticle icon={"💰"} title={"투자 유치 랭킹"} subtitle={"투자금액 순"}/>
                <RankArticle icon={"💰"} title={"투자 집행 랭킹"} subtitle={"투자건수 순"}/>
