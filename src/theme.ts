@@ -16,7 +16,7 @@ export const theme: DefaultTheme = {
         white: "#ffffff",
         type: {
             L: "1.2rem",
-            M: "0.85rem",
+            M: "0.88rem",
             S: "0.75rem"
         },
         gap: {
