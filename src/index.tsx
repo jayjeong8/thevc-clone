@@ -6,8 +6,12 @@ import {theme} from "./theme";
 import {QueryClient, QueryClientProvider} from "react-query";
 
 const GlobalStyle = createGlobalStyle`
+  @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
   *{
     box-sizing: border-box;
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+    font-weight: normal;
+    letter-spacing: -1px;
   }
   
   html, body, div, span, applet, object, iframe,
