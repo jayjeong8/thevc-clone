@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {InvestImage, LazyLoadingSection, ResearchInfo, ResearchTitle, ResearchWrapper} from "../style/ResearchStyle";
 import {useQuery} from "react-query";
 import {IImageData} from "../../interface";
@@ -12,26 +12,30 @@ export default function Research() {
         "imageData", getImageData
     );
 
+    useEffect(() => {
+        const target = document.querySelectorAll<HTMLImageElement>(".lazy");
+        const options = {
+            root: null,
+            rootMargin: '480px',
+            threshold: 0
+        }
+        const observer = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                        const image = entry.target
+                        image.attributes[1].value = image.attributes[2].value;
+                        observer.unobserve(entry.target);
+                        console.log(image.attributes[1].value, "///", image.attributes[2].value)
+                        console.log(entry)
+                    }
+                })
+            }, options)
 
-    const options = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 1
-    }
-    const observer = new IntersectionObserver(
-        (entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.src = entry.target.dataset.src;
-                    observer.unobserve(entry.target);
-                }
-                console.log(entry);
-            })
-        }, options)
-    const target = document.querySelectorAll<HTMLImageElement>(".image");
-    target.forEach((image) => {
-        observer.observe(image);
-    })
+        target.forEach((image) => {
+            observer.observe(image);
+        })
+    }, [data])
 
 
     return (
