@@ -41,7 +41,10 @@ export const LazyLoadingSection = styled.section`
   margin-top: ${props => props.theme.gap.L};
 `
 export const InvestImage = styled.div`
-  img{
+  width: 400px;
+  height: 240px;
+
+  img {
     width: 400px;
     height: 240px;
     border-radius: 8px;

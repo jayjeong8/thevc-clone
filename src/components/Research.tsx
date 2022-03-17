@@ -11,6 +11,29 @@ export default function Research() {
     const {data} = useQuery<IImageData[]>(
         "imageData", getImageData
     );
+
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 1
+    }
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.src = entry.target.dataset.src;
+                    observer.unobserve(entry.target);
+                }
+                console.log(entry);
+            })
+        }, options)
+    const target = document.querySelectorAll<HTMLImageElement>(".image");
+    target.forEach((image) => {
+        observer.observe(image);
+    })
+
+
     return (
         <ResearchWrapper>
             <ResearchTitle>투자/M&A 탐색</ResearchTitle>
@@ -25,13 +48,16 @@ export default function Research() {
                 </ResearchInfo>
             </section>
             <LazyLoadingSection>
-                {data?.map((data: IImageData ) => (
+                {data?.map((data: IImageData) => (
                     <InvestImage>
-                        <img loading="lazy"
-                             src={data.image}
+                        <img className="image"
+                            // loading="lazy"
+                             src=""
+                             data-src={data.image}
                              alt="Investment"/>
                     </InvestImage>
-                ))}
+                ))
+                }
             </LazyLoadingSection>
         </ResearchWrapper>
     )
