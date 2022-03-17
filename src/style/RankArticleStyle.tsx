@@ -10,7 +10,7 @@ export const Article = styled.article`
   padding: ${props => props.theme.gap.L};
   width: 300px;
   min-width: 300px;
-  height: 400px;
+  //height: 100%;
   background-color: ${props => props.theme.blue.main};
   border-radius: 8px;
 `
@@ -61,8 +61,8 @@ export const Button = styled.button`
     border-left: ${props => props.theme.black} 1px solid;
   }
 `
-export const InvestmentData = styled.ul`
-  height: 250px;
+export const InvestmentData = styled.ul<{ toggle: boolean }>`
+  height: ${(props) => (props.toggle ? "250px" : "500px")};
   overflow: hidden;
   li {
     display: grid;

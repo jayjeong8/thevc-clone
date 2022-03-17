@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {IRankArticle, IRankingData} from "../../interface";
 import {useQuery} from "react-query";
 import {Article, ArticleOpenBtn, Button, InvestmentData, InvestmentInfo, Loading, TimeFilter, Title} from "../style/RankArticleStyle";
@@ -11,9 +11,20 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
     const {data, isLoading} = useQuery<IRankingData[]>(
         "rankingData", getRankingData
     );
-    const onOpenBtnClink = () => {
 
+    const openBtn = document.getElementsByTagName("ArticleOpenBtn")
+    const [openToggle, setOpenToggle] = useState(true);
+    const onOpenBtnClink = () => {
+        if(openToggle){
+            setOpenToggle(false);
+            console.log(openBtn);
+        }
+        if(!openToggle){
+            setOpenToggle(true);
+            console.log("false");
+        }
     }
+
     return (
         <>
             {isLoading ?
@@ -30,7 +41,7 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
                         <Button>월간</Button>
                         <Button>연간</Button>
                     </TimeFilter>
-                    <InvestmentData>
+                    <InvestmentData toggle={openToggle}>
                         {data?.map((data : IRankingData, index) => (
                         <li key={index}>
                             <span>{data?.index}</span>
@@ -46,7 +57,7 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
                         </li>
                     ))}
                     </InvestmentData>
-                    <ArticleOpenBtn onClick={onOpenBtnClink}>▼펼치기</ArticleOpenBtn>
+                    <ArticleOpenBtn onClick={onOpenBtnClink}>{openToggle ? "▼펼치기" : "▲접기"}</ArticleOpenBtn>
                 </Article>}
         </>
     )
