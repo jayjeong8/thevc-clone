@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  width: 100vw;
+`
+
 export const Header = styled.header`
   width: 100%;
   z-index: 100;
@@ -82,7 +86,9 @@ export const LogoSquare = styled.div`
   }`
 export const Search = styled.input`
   margin-right: ${props => props.theme.gap.M};
-  width: 200px;
+  width: 30vw;
+  min-width: 200px;
+  max-width: 400px;
   height: 40px;
   padding-left: 12px;
   font-size: ${props => props.theme.type.M};
@@ -101,6 +107,7 @@ export const Search = styled.input`
   }
 `
 export const LoginBtn = styled.button`
+  margin-right: ${props => props.theme.gap.L};
   width: 96px;
   height: 40px;
   background: linear-gradient(180deg, #6d6de7, #5757e4);
