@@ -31,20 +31,20 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
                         <Button>연간</Button>
                     </TimeFilter>
                     <InvestmentData>
-                        {data?.map((data : IRankingData) => (
-                            <li>
-                                <span>{data?.index}</span>
-                                <div><img src={data?.imgUrl} alt={data?.rankTitle}/></div>
-                                <InvestmentInfo>
-                                    <div>{data?.rankTitle}</div>
-                                    <div>{data?.rankSubtitle}</div>
-                                </InvestmentInfo>
-                                <InvestmentInfo>
-                                    <div>{data?.scale}</div>
-                                    <div>{data?.series}</div>
-                                </InvestmentInfo>
-                            </li>
-                        ))}
+                        {data?.map((data : IRankingData, index) => (
+                        <li key={index}>
+                            <span>{data?.index}</span>
+                            <div><img src={data?.imgUrl} alt={data?.rankTitle}/></div>
+                            <InvestmentInfo>
+                                <div>{data?.rankTitle}</div>
+                                <div>{data?.rankSubtitle}</div>
+                            </InvestmentInfo>
+                            <InvestmentInfo>
+                                <div>{data?.scale}</div>
+                                <div>{data?.series}</div>
+                            </InvestmentInfo>
+                        </li>
+                    ))}
                     </InvestmentData>
                     <ArticleOpenBtn onClick={onOpenBtnClink}>▼펼치기</ArticleOpenBtn>
                 </Article>}

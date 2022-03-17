@@ -48,10 +48,9 @@ export default function Research() {
                 </ResearchInfo>
             </section>
             <LazyLoadingSection>
-                {data?.map((data: IImageData) => (
-                    <InvestImage>
-                        <img className="image"
-                            // loading="lazy"
+                {data?.map((data: IImageData, index) => (
+                    <InvestImage key={index}>
+                        <img className="lazy"
                              src=""
                              data-src={data.image}
                              alt="Investment"/>
