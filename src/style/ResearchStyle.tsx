@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const ResearchWrapper = styled.div`
   width: 100%;
   padding: ${props => props.theme.gap.S} ${props => props.theme.gap.L};
-
   section {
+    width: 100%;
     display: flex;
   }
 `
@@ -26,7 +26,7 @@ export const ResearchInfo = styled.div`
   border-radius: 8px;
 
   &:last-child {
-    margin-left: 20px;
+    margin: 0 ${props => props.theme.gap.L};
   }
 
   div:last-child {
