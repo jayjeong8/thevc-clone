@@ -39,7 +39,7 @@ function App() {
                             <span>데이터베이스</span>
                         </div>
                         <div>
-                            <Search placeholder={"회사, 제품, 서비스 검색"}></Search>
+                            <Search placeholder={"회사, 제품, 서비스 검색"}/>
                             <LoginBtn>로그인/가입</LoginBtn>
                         </div>
                     </div>
