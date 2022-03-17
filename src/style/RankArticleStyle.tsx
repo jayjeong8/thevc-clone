@@ -13,6 +13,9 @@ export const Article = styled.article`
   //height: 100%;
   background-color: ${props => props.theme.blue.main};
   border-radius: 8px;
+  &:last-child{
+    margin-right: 38px;
+  }
 `
 export const Title = styled.div`
   display: flex;
@@ -50,6 +53,11 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:first-child {
+    background: linear-gradient(180deg,
+    ${props => props.theme.black},
+    ${props => props.theme.gray.dark});
+    font-weight: bold;
+    filter: none;
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     border-right: ${props => props.theme.black} 1px solid;
