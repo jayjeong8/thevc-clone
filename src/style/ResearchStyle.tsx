@@ -43,11 +43,14 @@ export const LazyLoadingSection = styled.section`
 export const InvestImage = styled.div`
   width: 400px;
   height: 240px;
+  border: ${props => props.theme.blue.main} 2px solid;
+  border-radius: 8px;
+  margin-bottom: ${props => props.theme.gap.L};
 
   img {
-    width: 400px;
-    height: 240px;
-    border-radius: 8px;
-    border: ${props => props.theme.blue.main} 2px solid;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
   }
 `
