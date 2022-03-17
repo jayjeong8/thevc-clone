@@ -1,11 +1,22 @@
 import React from 'react';
-import {Logo, Nav, LogoSquare, Search, LoginBtn, Ranking, LogoSection, SearchSection, Header} from "./style/AppStyle";
+import {
+    Logo,
+    Nav,
+    LogoSquare,
+    Search,
+    LoginBtn,
+    Ranking,
+    LogoSection,
+    SearchSection,
+    Header,
+    Wrapper
+} from "./style/AppStyle";
 import RankArticle from "./components/RankArticle";
 import Research from "./components/Research";
 
 function App() {
     return (
-        <>
+        <Wrapper>
             <Header>
                 <LogoSection>
                     <Logo>
@@ -53,7 +64,7 @@ function App() {
                <RankArticle icon={"🔥"} title={"금융회사 랭킹"} subtitle={"조회수 순"}/>
             </Ranking>
             <Research/>
-        </>
+        </Wrapper>
     );
 }
 
