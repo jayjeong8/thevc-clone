@@ -26,8 +26,6 @@ export default function Research() {
                         const image = entry.target
                         image.attributes[1].value = image.attributes[2].value;
                         observer.unobserve(entry.target);
-                        console.log(image.attributes[1].value, "///", image.attributes[2].value)
-                        console.log(entry)
                     }
                 })
             }, options)
