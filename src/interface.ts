@@ -1,3 +1,4 @@
+
 export interface IRankingData {
     index: string;
     imgUrl: string;
@@ -16,3 +17,4 @@ export interface IRankArticle {
 export interface IImageData {
     image: string;
 }
+
