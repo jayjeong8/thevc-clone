@@ -1,11 +1,11 @@
 import React, {useEffect} from "react";
 import {InvestImage, LazyLoadingSection, ResearchInfo, ResearchTitle, ResearchWrapper} from "../style/ResearchStyle";
 import {useQuery} from "react-query";
-import {IImageData} from "../../interface";
+import {IImageData} from "../interface";
 
 export default function Research() {
     const getImageData = () => {
-        return fetch('http://localhost:3000/data/investmentImageData.json')
+        return fetch('thevc-clone/data/investmentImageData.json')
             .then(response => response.json())
     }
     const {data} = useQuery<IImageData[]>(

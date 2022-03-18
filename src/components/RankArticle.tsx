@@ -1,8 +1,9 @@
-import React, {useState} from "react";
-import {IRankArticle, IRankingData} from "../../interface";
+import React from "react";
+import {IRankArticle, IRankingData} from "../interface";
+import {openToggleState} from "../atom";
 import {useQuery} from "react-query";
 import {Article, ArticleOpenBtn, Button, InvestmentData, InvestmentInfo, Loading, TimeFilter, Title} from "../style/RankArticleStyle";
-import {useRecoilState, atom} from "recoil";
+import {useRecoilState} from "recoil";
 
 export default function RankArticle({icon, title, subtitle}: IRankArticle) {
     const getRankingData = () => {
@@ -14,10 +15,7 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
     );
 
     const openBtn = document.getElementsByTagName("ArticleOpenBtn")
-    const openToggleState = atom<boolean>({
-        key: 'openToggleState',
-        default: true
-    })
+
     const [openToggle, setOpenToggle] = useRecoilState(openToggleState);
     const onOpenBtnClink = () => {
         if(openToggle){
