@@ -7,7 +7,7 @@ import {useRecoilState} from "recoil";
 
 export default function RankArticle({icon, title, subtitle}: IRankArticle) {
     const getRankingData = () => {
-        return fetch('http://localhost:3000/data/rankingData.json')
+        return fetch('thevc-clone/data/rankingData.json')
             .then(response => response.json())
     }
     const {data, isLoading} = useQuery<IRankingData[]>(
