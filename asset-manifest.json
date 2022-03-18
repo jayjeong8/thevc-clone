@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/thevc-clone/static/js/main.ab77e5ad.js",
+    "main.js": "/thevc-clone/static/js/main.46762f60.js",
     "index.html": "/thevc-clone/index.html",
-    "main.ab77e5ad.js.map": "/thevc-clone/static/js/main.ab77e5ad.js.map"
+    "main.46762f60.js.map": "/thevc-clone/static/js/main.46762f60.js.map"
   },
   "entrypoints": [
-    "static/js/main.ab77e5ad.js"
+    "static/js/main.46762f60.js"
   ]
 }
