@@ -2,12 +2,32 @@ import React from "react";
 import {IRankArticle, IRankingData} from "../interface";
 import {openToggleState} from "../atom";
 import {useQuery} from "react-query";
-import {Article, ArticleOpenBtn, Button, InvestmentData, InvestmentInfo, Loading, TimeFilter, Title} from "../style/RankArticleStyle";
+import {
+    Article,
+    ArticleOpenBtn,
+    Button,
+    InvestmentData,
+    InvestmentInfo,
+    Loading,
+    TimeFilter,
+    Title
+} from "../style/RankArticleStyle";
 import {useRecoilState} from "recoil";
 
 export default function RankArticle({icon, title, subtitle}: IRankArticle) {
+    const localhost = document.location.href.includes("localhost");
+    let RANKINGDATA ="";
+    if (localhost) {
+        RANKINGDATA = "thevc-clone/data/rankingData.json"
+    } else {
+        RANKINGDATA = "data/rankingData.json"
+    }
     const getRankingData = () => {
-        return fetch('thevc-clone/data/rankingData.json')
+        return fetch(RANKINGDATA, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
             .then(response => response.json())
     }
     const {data, isLoading} = useQuery<IRankingData[]>(
@@ -18,13 +38,11 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
 
     const [openToggle, setOpenToggle] = useRecoilState(openToggleState);
     const onOpenBtnClink = () => {
-        if(openToggle){
+        if (openToggle) {
             setOpenToggle(false);
-            console.log(openBtn);
         }
-        if(!openToggle){
+        if (!openToggle) {
             setOpenToggle(true);
-            console.log("false");
         }
     }
 
@@ -32,7 +50,7 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
         <>
             {isLoading ?
                 <Loading>Loading..</Loading>
-            :
+                :
                 <Article>
                     <Title>
                         <span>{icon}</span>
@@ -45,20 +63,20 @@ export default function RankArticle({icon, title, subtitle}: IRankArticle) {
                         <Button>연간</Button>
                     </TimeFilter>
                     <InvestmentData toggle={openToggle}>
-                        {data?.map((data : IRankingData, index) => (
-                        <li key={index}>
-                            <span>{data?.index}</span>
-                            <div><img src={data?.imgUrl} alt={data?.rankTitle}/></div>
-                            <InvestmentInfo>
-                                <div>{data?.rankTitle}</div>
-                                <div>{data?.rankSubtitle}</div>
-                            </InvestmentInfo>
-                            <InvestmentInfo>
-                                <div>{data?.scale}</div>
-                                <div>{data?.series}</div>
-                            </InvestmentInfo>
-                        </li>
-                    ))}
+                        {data?.map((data: IRankingData, index) => (
+                            <li key={index}>
+                                <span>{data?.index}</span>
+                                <div><img src={data?.imgUrl} alt={data?.rankTitle}/></div>
+                                <InvestmentInfo>
+                                    <div>{data?.rankTitle}</div>
+                                    <div>{data?.rankSubtitle}</div>
+                                </InvestmentInfo>
+                                <InvestmentInfo>
+                                    <div>{data?.scale}</div>
+                                    <div>{data?.series}</div>
+                                </InvestmentInfo>
+                            </li>
+                        ))}
                     </InvestmentData>
                     <ArticleOpenBtn onClick={onOpenBtnClink}>{openToggle ? "▼펼치기" : "▲접기"}</ArticleOpenBtn>
                 </Article>}

@@ -4,8 +4,15 @@ import {useQuery} from "react-query";
 import {IImageData} from "../interface";
 
 export default function Research() {
+    const localhost = document.location.href.includes("localhost");
+    let IMAGEDATA ="";
+    if (localhost) {
+        IMAGEDATA = "thevc-clone/data/investmentImageData.json"
+    } else {
+        IMAGEDATA = "data/investmentImageData.json"
+    }
     const getImageData = () => {
-        return fetch('thevc-clone/data/investmentImageData.json')
+        return fetch(IMAGEDATA)
             .then(response => response.json())
     }
     const {data} = useQuery<IImageData[]>(
